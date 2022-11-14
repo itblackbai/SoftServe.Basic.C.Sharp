@@ -1,0 +1,23 @@
+using System;
+
+namespace sf_hm1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Read double number r (radius of a circle).
+            //Calculate the length (l=2*pi*r), area (S=pi*r*r),
+            //and volume (4/3*pi*r*r*r) of a circle.
+            Console.WriteLine("Enter please number R ");
+            double r = double.Parse(Console.ReadLine());
+            double lenght = 2 * Math.PI * r;
+            double area = Math.PI * r * r;
+            double volume = 4/3*Math.PI * r * r* r;
+            Console.WriteLine($"lenght is {lenght}, area is {area}, " +
+                $"volume is {volume}") ;
+            Console.ReadLine();
+        }
+
+    }
+}
