@@ -1,0 +1,30 @@
+using System;
+
+namespace sf_hm1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Enter 2 integer numbers. Check if they are both positive – use bool expression
+            Console.WriteLine("Enter please number a & b ");
+            int number_4a = int.Parse(Console.ReadLine());
+            int number_4b = int.Parse(Console.ReadLine());
+
+            if (number_4a > 0 && number_4b > 0)
+            {
+                string num = "true";
+                Console.WriteLine($"Number is {num}");
+            }
+            else
+            {
+                string num = "false";
+                Console.WriteLine($"Number is {num}") ;
+            }
+            Console.ReadLine();
+
+
+        }
+
+    }
+}
