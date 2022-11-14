@@ -1,0 +1,27 @@
+using System;
+
+namespace sf_hm1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //Define string name and integer age. 
+            //Output question "What is your name?";
+            //Read value name and output next question: "How old are you, (name)?".
+            //Read value age and output whole information  
+            
+            
+            Console.WriteLine("What is your name");
+            string name = Console.ReadLine();
+            Console.WriteLine($"How old are you, {name}") ;
+            int age = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Your name is {name} and age is {age}") ;
+
+
+       
+        }
+
+    }
+}
