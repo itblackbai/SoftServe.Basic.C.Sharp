@@ -1,0 +1,23 @@
+using System;
+
+namespace sf_hm1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Read 3 variables of char type. Write message: “You enter (first char), (second char), (3 char)”
+            Console.WriteLine("Enter please char  First & Second & Three");
+            char first_char = char.Parse(Console.ReadLine());
+            char second_char = char.Parse(Console.ReadLine());
+            char three_char = char.Parse(Console.ReadLine());
+
+            Console.WriteLine($"You enter  first_char : {first_char}, " +
+                $"second_char :  {second_char} ,three_char {three_char} ") ;
+            Console.ReadLine();
+
+           
+        }
+
+    }
+}
