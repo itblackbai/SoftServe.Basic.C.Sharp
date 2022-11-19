@@ -1,0 +1,16 @@
+
+            //Enter double  number  and get the first 2 digits after the
+            //point of this number and output the sum of these numbers.
+            //For example: 3.456 -> 4+5=9
+
+          
+
+            Console.WriteLine("Enter double number");
+            double number = double.Parse(Console.ReadLine());
+            int take_twonumber = (int)(number * 10) % 10;
+            int take_threenumber = (int)(number * 100) % 10;
+
+
+            Console.WriteLine($"Sum - {take_twonumber+take_threenumber}");
+            Console.ReadLine();
+        
