@@ -1,0 +1,35 @@
+            //Enter integer number  h, representing the time of day (hour).  
+            //Depending on the time of day, output greetings ("Good morning!",
+            //"Good afternoon!", "Good evening!“ or "Good night!")
+
+            
+            Console.WriteLine("Enter hour ");
+            int hour = int.Parse(Console.ReadLine());
+
+            if ((hour >= 6) && ( hour <=10))   //+
+            {
+                Console.WriteLine("Добрий ранок");
+            }
+            if ((hour >= 11) && (hour <= 18))   //+
+            {
+                Console.WriteLine("Доброго дня");
+            }
+            if ((hour >= 19) && (hour <=23)) //+ 
+            {
+                Console.WriteLine("Доброго вечора");
+            }
+            if ((hour >= 0) && (hour <= 5))
+            {
+                Console.WriteLine("Доброї ночі");
+            }
+            if (hour >= 24)
+            {
+                Console.WriteLine("Ти увів не те число");
+            }
+            else 
+            {
+                Console.WriteLine("");
+            }
+
+
+            Console.ReadLine(); 
