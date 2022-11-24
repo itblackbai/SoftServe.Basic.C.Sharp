@@ -1,0 +1,48 @@
+            //Read 3 float numbers and check if they are all in the range [-5.5].
+
+            // погуглити і зробити іншим способом щоб не був один 
+
+            Console.WriteLine("Homework 2");
+            Console.WriteLine("Enter 3 number");
+            float number_one = float.Parse(Console.ReadLine());
+            float number_two = float.Parse(Console.ReadLine());
+            float number_three = float.Parse(Console.ReadLine());
+
+            if ((number_one >= -5) && (number_one <= 5))
+            {
+                Console.WriteLine($"First number is : true {number_one}") ;
+            }
+            else
+            {
+                Console.WriteLine($"First number is : false {number_one}");
+            }
+
+            if ((number_two >= -5) && (number_two <= 5))
+            {
+                Console.WriteLine($"First number is : true {number_two}");
+            }
+            else
+            {
+                Console.WriteLine($"First number is : false {number_two}");
+            }
+
+            if ((number_three >= -5) && (number_three <= 5))
+            {
+                Console.WriteLine($"First number is : true {number_three}");
+            }
+            else
+            {
+                Console.WriteLine($"First number is : false {number_three}");
+            }
+            Console.ReadLine();
+            //================================================================
+
+            Console.WriteLine("Homework 2");
+            Console.WriteLine("Enter 3 number");
+            float number_one = float.Parse(Console.ReadLine());
+            float number_two = float.Parse(Console.ReadLine());
+            float number_three = float.Parse(Console.ReadLine());
+            Console.WriteLine((number_one >= -5 && number_one <= 5));
+            Console.WriteLine((number_two >= -5 && number_two <= 5));
+            Console.WriteLine((number_three >= -5 && number_three <= 5));
+            Console.ReadLine();
