@@ -1,0 +1,19 @@
+  //Read number of HTTP Error (400, 401,402, ...) and write the name of this error (Declare enum HTTPError)
+
+        enum HTTPError { Error400, Error401, Error402 }
+
+        static void Main(string[] args)
+        {
+            HTTPError error = HTTPError.Error400 ;
+            Console.WriteLine($"{error} error 400 bad request ") ;
+            HTTPError hTTPError = HTTPError.Error401;
+            Console.WriteLine($"{hTTPError} error 401 unauthorized ");
+            HTTPError hTTP = HTTPError.Error402;
+            Console.WriteLine($"{hTTP} error 402 ebay ");
+
+
+            Console.ReadKey();
+
+
+
+        }
