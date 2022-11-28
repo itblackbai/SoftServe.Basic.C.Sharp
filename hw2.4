@@ -1,0 +1,30 @@
+
+    // Declare struct Dog with fields name, mark, age.
+    // Declare object myDog of Dog type and read values for it.
+    // Output information on the console. (Override method ToString in struct)
+
+
+    struct Dog
+    {
+        public string name;
+        public string mark;
+        public int age;
+        public override string ToString()
+        {
+            return string.Format("Dog : {0},{1},{2}",name,mark,age);
+        }
+    }
+    class Program
+    {
+        
+
+        static void Main(string[] args)
+        {
+            Dog p;
+            p.name = "Claud";
+            p.mark = "Moskal";
+            p.age = 2;
+
+            Console.WriteLine(p);
+            Console.ReadLine();        }
+    }
