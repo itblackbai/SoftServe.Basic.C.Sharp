@@ -1,0 +1,17 @@
+           // Enter two integers numbers a and b.
+           // Calculate how many integers in the range[a..b] are divided by 3 without remainder
+
+            Console.WriteLine("Input two numbers");
+            int num_one = int.Parse(Console.ReadLine());
+            int num_two = int.Parse(Console.ReadLine());
+            int dil = 3;
+            int counter = 0;
+            for (int i = num_one; i <= num_two; i++)
+            {
+                if (i % dil == 0)
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine(counter);
+            Console.ReadLine();
