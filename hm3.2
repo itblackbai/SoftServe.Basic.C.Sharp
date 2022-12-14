@@ -1,0 +1,11 @@
+            //Ask user to enter the number of month.
+            //Read value and output the count of days in this month.
+            Console.WriteLine("Enter year");
+            int input_year = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter mounth");
+            int input_mouth = int.Parse(Console.ReadLine());
+            int days = DateTime.DaysInMonth(input_year, input_mouth);
+            Console.WriteLine($"Day in month = {days}, month = {input_mouth}, year = {input_year}");
+        
+
+            Console.ReadKey();
