@@ -1,0 +1,141 @@
+//Define class Car with fields name, color, price and const field CompanyName          	
+//Create two constructors - default and with parameters.                                         
+//Create a property to access the color field.                                           		
+//Define methods: Input () - to enter data about cars from the console,				
+//Print () - to output data about cars on the console					
+//ChangePrice (double x) - to change the price by x%
+//Enter data about 3 cars.
+//Decrease car price by 10%, display info about the car on the console.
+//Enter a new color and repaint the car from the color white in the defined color
+//Overload operator == for the class Car (cars - equal if the name and price are equal)
+//Override method ToString()  in the class Car, which returns a line with data about cars
+
+
+using System;
+namespace task4
+{
+    public class Car
+    {
+        public const string CompanyName = "bmw";
+        public string name;
+        private string color;
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
+        public double price;
+
+        public Car() { }
+
+
+        public Car(string name, string color, double price)
+        {
+          this.name = name;
+          this.color = color;
+          this.price = price;
+        }
+        public static Car Input(int i)
+        {
+            Console.Write($"Enter {i + 1} car name ");
+            string name = Console.ReadLine();
+            Console.Write($"Enter {i + 1} car color ");
+            string color = Console.ReadLine();
+            Console.Write($"Enter {i + 1} car price ");
+            double price = double.Parse(Console.ReadLine());
+            Car car = new Car(name, color, price);
+            return car;
+        }
+        public void Print()
+        {
+            Console.WriteLine($"Mark is : {CompanyName}, name is : {name}," + 
+                $"color is : {color}, price is {price}");
+        }
+        public void ChangePrice(double a)
+        {
+            price -= price * a / 100;
+        }
+
+        public static bool operator ==(Car first, Car second) 
+        { 
+            return (first.name == second.name) && (first.price == second.price); 
+        } 
+ 
+        public static bool operator !=(Car first, Car second) 
+        { 
+            return !(first.name == second.name) && (first.price == second.price); 
+        } 
+ 
+        public override string ToString() 
+        { 
+            return "Car mark " + CompanyName + " car name " + name + " with color " + color + " & price " + price; 
+        }
+    }
+}
+
+//===============
+
+using System;
+
+namespace task4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var car = new Car[3];
+            Console.WriteLine(" Input 3 cars");
+
+            for (int i = 0; i < 3; i++)
+            {
+                car[i] = Car.Input(i);
+            }
+
+            Console.WriteLine("Lower price to 10 %");
+            double low_price = double.Parse(Console.ReadLine());
+            for (int i = 0; i < 3; i++)
+            {
+                car[i].ChangePrice(low_price);
+                car[i].Print();
+            }
+            Console.WriteLine("Change color for another");
+            string new_color = Console.ReadLine();
+            string old_color = "White";
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (car[i].Color.Equals(old_color))
+                {
+                    car[i].Color = new_color;
+                    Console.WriteLine($"Car {i + 1} has new color - " + new_color);
+                }
+                else
+                {
+                    Console.WriteLine($"Color {i + 1} was not changed");
+                }
+            }
+
+
+
+            for (int i = 0; i < car.Length; i++)
+            {
+                for (int j = i + 1; j < car.Length; j++)
+                {
+                    if (car[i] == car[j])
+                    {
+                        Console.WriteLine($"{car[i]} and {car[j]} are equals");
+                    }
+                    else
+                    { Console.WriteLine($"Cars are not equals"); }
+                }
+            }
+            for (int i = 0; i < car.Length; i++)
+            {
+                Console.WriteLine(car[i].ToString());
+            }
+            Console.ReadKey();
+
+            Console.ReadLine();
+        }
+    }
+}
