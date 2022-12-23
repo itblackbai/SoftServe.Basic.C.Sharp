@@ -1,0 +1,59 @@
+interface IFlyable
+    {
+        void Fly();
+    }
+    class Bird : IFlyable
+    {
+        private string name;
+        private bool canFly;
+        public Bird (string name, bool canFly)
+        {
+            this.name = name;
+            this.canFly = canFly;
+        }
+        public void Fly()
+        {
+            Console.WriteLine("Name: {0} \nCan Fly: {1}", name, canFly);
+        }
+    }
+    class Plane : IFlyable
+    {
+        string mark;
+        double highFly;
+        public Plane (string mark, double highFly)
+        {
+            this.mark = mark;
+            this.highFly = highFly;
+        }
+        public void Fly()
+        {
+            Console.WriteLine("Name: {0} \nCan Fly: {1}", mark, highFly);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<IFlyable> flyList = new List<IFlyable>();
+            flyList.Add(new Bird("One", true));
+            flyList.Add(new Plane("Two", 2.56));
+            for (int i = 0; i < flyList.Count; i++)
+            {
+                flyList[i].Fly();
+            }
+            Console.ReadKey();
+
+
+            //Develop interface IFlyable with method Fly()
+            // (Output information about bird or plane).
+
+            //Create two classes Bird(with fields: name and canFly) and
+            //Plane(with fields: mark and highFly) , which implement interface IFlyable.
+
+            //Create List of IFlyable objects.
+            //Add some Birds and Planes to it.
+            //Call Fly() method for every item from the list of it.
+
+
+        }
+    }
