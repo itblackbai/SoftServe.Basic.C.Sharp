@@ -1,0 +1,51 @@
+using System;
+
+namespace _2task
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Створіть клас Cat.++
+            //У кішки буде властивість «рівень ситості» і метод «з'їсти щось». ++
+            //Створіть enum Їжа (риба, миша ...).
+            //Кожен вид їжі повинен по-різному змінювати рівень ситості.
+            Cat cat = new Cat();
+            cat.Eatsomething();
+            Console.ReadLine();
+        }
+    }
+    class Cat
+    {
+        public enum Catfood { Milk=10, Fish=20, Meat=40 }
+        public int lvl = 0;
+        Catfood catfood = new Catfood();
+
+        public void Eatsomething()
+        {
+            while (lvl <= 100)
+            {
+                Console.WriteLine("Give some eat Milk, Fish, Meat");
+                int givefood = int.Parse(Console.ReadLine());
+                switch (givefood)
+                {
+                    case 1:
+                        lvl += (int)Catfood.Milk;
+                        Console.WriteLine($"lvl is {lvl}");
+                        break;
+                    case 2:
+                        lvl += (int)Catfood.Fish;
+                        Console.WriteLine($"lvl is {lvl}");
+                        break;
+                    case 3:
+                        lvl += (int)Catfood.Meat;
+                        Console.WriteLine($"lvl is {lvl}");
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
+    }
+}
