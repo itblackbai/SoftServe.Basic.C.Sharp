@@ -1,0 +1,39 @@
+
+using System;
+using System.Collections.Generic;
+
+namespace hw5.developer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Create interface IDeveloper with property Tool, methods Create() and Destroy()
+            //Create two classes Programmer(with field language)
+            //          and Builder(with field tool), which implement this interface.
+            //Create array or list of IDeveloper.Add some Programmers and Builders to it.
+            //           Call Create() and Destroy() methods for all of it
+           
+            List<IDeveloper> developers = new List<IDeveloper>();
+
+            developers.Add(new Programmer("С#"));
+            developers.Add(new Programmer("Java"));
+            developers.Add(new Builder("Molotok"));
+            developers.Add(new Builder("Sokura"));
+          
+
+            foreach (IDeveloper developer in developers)
+            {
+                developer.Create();
+            }
+            foreach (IDeveloper developer in developers)
+            {
+                developer.Destroy();
+            }
+
+
+            
+            Console.ReadLine();
+        }
+    }
+}
