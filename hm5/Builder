@@ -1,0 +1,26 @@
+using System;
+namespace hw5.developer
+{
+    public class Builder : IDeveloper
+    {
+        string tool;
+        public string Tool
+        {
+            get;
+            set;
+        }
+        public Builder(string tool)
+        {
+            this.tool = tool;
+        }
+        public void Create()
+        {
+            Console.WriteLine($"Builder is create {tool}");
+        }
+        public void Destroy()
+        {
+            Console.WriteLine($"Builder is destroy {tool}");
+        }
+     
+    }
+}
