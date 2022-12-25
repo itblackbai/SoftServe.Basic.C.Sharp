@@ -1,0 +1,27 @@
+using System;
+namespace hw5.developer
+{
+    public class Programmer : IDeveloper 
+    {
+        string language;
+        public string Tool
+        {
+            get;
+            set;
+        }
+
+        public Programmer( string language)
+        {
+            this.language = language;
+        }
+        public void Create()
+        {
+            Console.WriteLine($"Dev is create {language}");
+        }
+        public void Destroy()
+        {
+            Console.WriteLine($"Dev is destroy {language}");
+        }
+       
+    }
+}
