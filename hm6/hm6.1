@@ -1,0 +1,55 @@
+using System;
+
+namespace hm6._1
+{
+    class Program
+    {
+        public static int Div(int number_one, int number_two)
+        {
+            return number_one / number_two;
+           
+        }
+        
+        static void Main(string[] args)
+        {
+
+        a1:
+            try
+            {
+                try
+                {
+                    
+                    //Create method Div(), which calculates the dividing of two int numbers. 
+                    //In Main() read two int numbers and call this method.Catch appropriative exceptions.
+                    Console.WriteLine("Enter 2 numbers");
+                    int number_one = int.Parse(Console.ReadLine());
+                    int number_two = int.Parse(Console.ReadLine());
+                    
+                    Console.WriteLine($"{Div(number_one, number_two)}");
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("You need to enter simple number");
+                    goto a1;
+                }
+                finally { }
+             
+            }
+            catch (DivideByZeroException )
+            {
+                Console.WriteLine("DivideByZeroException");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Exception");
+            } 
+            finally
+            {
+        
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
