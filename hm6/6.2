@@ -1,0 +1,73 @@
+using System;
+using static System.Net.Mime.MediaTypeNames;
+using System.ComponentModel;
+using System.Drawing;
+
+namespace hm6._2
+{
+    class Program
+    {
+        public static void ReadNumber(int start, int end)
+        {
+            return;
+        }
+        
+        static void Main(string[] args)
+        {
+
+        //Write method ReadNumber(int start, int end),
+        //which reads from console integer numbers and returns it,
+        //if it is in the range[start...end].
+        //If this numbers is invalid or non - number text is read,
+        //the method should throw an exception.
+        //Using this method write a method Main(), that has to enter 10 numbers:
+        //a1, a2, ..., a10, such that 1 < a1 < ... < a10 < 100
+        a1:
+            try
+            {
+                Console.WriteLine("Enter the range, number 1 and 2 ");
+                int start = int.Parse(Console.ReadLine());
+                int end = int.Parse(Console.ReadLine());
+                a3:
+                Console.WriteLine("Enter 10 int numbers more than starter range");
+              
+                try
+                {
+            
+                    for (int i = 0; i < 10; i++)
+                    {
+                    a2:
+
+                        // 1 > 2 
+                        int middle = int.Parse(Console.ReadLine());
+                        if ((start > middle) & (middle < end))
+                        {
+                            Console.WriteLine("This number is less or more than the range");
+                            goto a2;
+                        }
+                        else 
+                        {
+                            Console.WriteLine("All is fine! ");
+                            start = middle;
+                        }
+                    }
+                }
+                catch(FormatException)
+                {
+                    Console.WriteLine("ERROR, enter int number ");
+                    goto a3;
+                }
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("ERROR, enter int number ");
+                goto a1;
+            }
+            
+
+
+            Console.ReadLine();
+        }
+    }
+}
