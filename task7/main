@@ -1,0 +1,38 @@
+using System;
+using System.ComponentModel;
+using System.IO;
+
+namespace task7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Read and write all data from data.txt into rez.txt files, by using (Catch appropriative exceptions):
+            //StreamReader StreamWriter
+            //File.WriteAllText
+            try
+            {
+                string data = "/Users/marianchornobai/Desktop/data.txt";
+                string rez = "/Users/marianchornobai/Desktop/rez.txt";
+                string text = File.ReadAllText(data);
+
+                File.WriteAllText(rez, text);
+                Console.WriteLine($"File was copy from {data} to {rez}");
+            }
+            catch (FileNotFoundException exctption)
+            {
+                Console.WriteLine(exctption.Message);
+            }
+            catch (IOException IOEX )
+            {
+                Console.WriteLine(IOEX.Message);
+            }
+            finally
+            {
+                Console.ReadLine();
+            }
+
+        }
+    }
+}
