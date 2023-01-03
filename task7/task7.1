@@ -1,0 +1,26 @@
+
+             //Read and write all data from data.txt into rez.txt files, by using (Catch appropriative exceptions):
+            //StreamReader StreamWriter
+            //File.WriteAllText
+            try
+            {
+                string data = "/Users/marianchornobai/Desktop/data.txt";
+                string rez = "/Users/marianchornobai/Desktop/rez.txt";
+                StreamReader reader = new StreamReader(data);
+                reader.Close();
+                StreamWriter writer = new StreamWriter(rez);
+                writer.Close();
+                Console.WriteLine($"File was copy from {data} to {rez}");
+            }
+            catch (FileNotFoundException exctption)
+            {
+                Console.WriteLine(exctption.Message);
+            }
+            catch (IOException IOEX )
+            {
+                Console.WriteLine(IOEX.Message);
+            }
+            finally
+            {
+                Console.ReadLine();
+            }
