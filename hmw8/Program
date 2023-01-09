@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _8
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int count = 1;
+            List<Shape> shapes = new List<Shape>();
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("Enter  of 10 different shapes: Circle or Square");
+                Console.Write($"Shape name : {count++}");
+                string enter_shape = Console.ReadLine();
+                Console.WriteLine("Enter area");
+                double enter_area = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter perimeter");
+                double enter_perimeter = double.Parse(Console.ReadLine());
+            }
+
+            Shape shape = shapes[0];
+            foreach (Shape shape1 in shapes)
+            {
+                if (shape.Perimeter() > shape.Perimeter()) ;
+                {
+                    shape = shape1;
+                }
+
+            }
+            Console.WriteLine($"Max perimeter is {shape.Perimeter()}");
+
+            Console.WriteLine("Sorting");
+            shapes.Sort();
+            foreach (Shape shape1 in shapes)
+            {
+                Console.WriteLine($"Sort area is : {shape.Area()}") ;
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
