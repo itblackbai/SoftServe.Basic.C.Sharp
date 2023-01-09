@@ -1,0 +1,28 @@
+using System;
+namespace _8
+{
+    public class Square : Shape
+    {
+        private double side;
+        public double Side
+        {
+
+            get { return side; }
+            set { side = value; }
+        }
+        public Square(string Name, double Side) : base(Name)
+        {
+            side = Side;
+        }
+        public override double Area()
+        {
+            
+            return side * side;
+        }
+        public override double Perimeter()
+        {
+            return side * 4;
+        }
+    }
+}
+
