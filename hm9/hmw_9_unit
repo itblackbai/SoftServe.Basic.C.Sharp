@@ -1,0 +1,67 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using testCalculator;
+using System.Collections.Generic;
+
+namespace testCalk
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void Add_xy_return3()
+        {
+            //arrenge
+            double x = 1;
+            double y = 2;
+            double expected = 3;
+
+            //actual
+            Calculator c = new Calculator();
+            double actual = c.Add(x, y);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Divide_xy_return05()
+        {
+            //arrenge
+            double x = 1;
+            double y = 2;
+            double expected = 0.5;
+
+            //actual
+            Calculator c = new Calculator();
+            double actual = c.Divide(x, y);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Subtract_xy_return_1()
+        {
+            //arrenge
+            double x = 1;
+            double y = 2;
+            double expected = -1;
+
+            //actual
+            Calculator c = new Calculator();
+            double actual = c.Subtract(x, y);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Multiply_xy_return2()
+        {
+            //arrenge
+            double x = 1;
+            double y = 2;
+            double expected = 2.0;
+
+            //actual
+            Calculator c = new Calculator();
+            double actual = c.Multiply(x, y);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
