@@ -1,0 +1,68 @@
+using System.Linq;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace linq
+{
+    
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Create a collection of 10 integers numders
+
+            int[] ints = { 1, 2, -3, 4, -5, 6, 7, 8, 9, 10 };
+
+
+            //Get and display only negative numbers on the console
+
+            IEnumerable<int> evens = ints.Where(i => i < 0 );
+            foreach (int i in evens)
+                Console.WriteLine($" Negative numbers :{i}");
+
+            //Get and display only positive numbers on the console
+
+            
+            IEnumerable<int> positive = ints.Where(i => i > 0);
+            foreach (int i in positive)
+                Console.WriteLine($" Positive numbers :{i}");
+
+            //Get the largest and smallest elements from the array, and find the sum of all elements of the array.
+          
+            int l = ints.Max();
+            Console.WriteLine($"Largest element : {l}");
+            
+            int s = ints.Min();
+            Console.WriteLine($"Smaler element : {s}");
+          
+            int sum = ints.Sum();
+            Console.WriteLine($"Sum element : {sum}");
+           
+            double average = ints.Average();
+            Console.WriteLine($"Average element : {average}");
+
+            //Get the first largest element in array that is smaller than the Average of elements in array 
+
+            var largest = ints.FirstOrDefault(n => n > average);
+            Console.WriteLine($"Largest {largest}");
+
+            var smaller = ints.FirstOrDefault(n => n < average);
+            Console.WriteLine($"Smaller {smaller}");
+
+            //Sort the array using OrderBy
+            Console.WriteLine("************************************************");
+            IEnumerable<int> sorting = ints.OrderBy(i => i);
+            foreach (int i in sorting)
+                Console.Write(i + " ");
+            Console.WriteLine();
+
+
+
+                Console.ReadLine();
+        }
+
+
+    }
+}
